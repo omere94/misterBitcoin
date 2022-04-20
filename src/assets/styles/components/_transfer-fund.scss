@@ -1,0 +1,51 @@
+.trans {
+    background-color: $clr2;
+    padding: 20px 40px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: rem(20px);
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__form {
+        position: relative;
+
+        input {
+            background: none;
+            border: 0px;
+            color: $clr1;
+            box-shadow: 0px 1px 0px 0px $clr1;
+            width: 60px;
+            margin-inline-start: 5px;
+        }
+
+        button {
+            margin-inline-start: 5px;
+            position: absolute;
+            right: 0;
+            background-color: $clr3;
+            &.disable {
+                background-color: darken($clr3, 15%);
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+@media (max-width: $break-narrow) {
+    .trans {
+        &__form {
+            button {
+                position: relative;
+            }
+        }
+    }
+}
+
+@media (min-width: $break-normal) {
+}
+
+@media (min-width: $break-wide) {
+}

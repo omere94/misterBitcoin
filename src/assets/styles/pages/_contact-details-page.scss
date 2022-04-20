@@ -1,0 +1,78 @@
+.details-cmp {
+    @include flex(column);
+    padding: 35px;
+    gap: 20px;
+
+    &__btns {
+        @include flex(row, space-between);
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .contact-det {
+        @include flex();
+        gap: 60px;
+
+        &__img {
+            width: 200px;
+            border-radius: 50%;
+        }
+
+        .details {
+            @include flex(column, space-evenly, flex-start);
+            font-size: rem(20px);
+            height: 100%;
+
+            .details__icon {
+                color: $clr1;
+                position: absolute;
+                left: -40px;
+                top: 3px;
+                cursor: pointer;
+            }
+
+            .details__name,
+            .details__email,
+            .details__phone {
+                position: relative;
+            }
+        }
+    }
+}
+
+@media (max-width: $break-narrow) {
+    .details-cmp {
+        .contact-det {
+            flex-direction: column;
+            align-items: flex-start;
+
+            &__img {
+                width: 100px;
+            }
+
+            .details {
+                padding-inline-start: 30px;
+            }
+        }
+    }
+}
+
+@media (min-width: $break-normal) {
+    .details-cmp {
+        .contact-det {
+            &__img {
+                width: 250px;
+            }
+        }
+    }
+}
+
+@media (min-width: $break-wide) {
+    .details-cmp {
+        .contact-det {
+            &__img {
+                width: 300px;
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+.contact {
+    @include flex(column);
+    cursor: pointer;
+    padding: 20px;
+    gap: 10px;
+
+    &__img {
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 0px $shadowClr;
+        width: 126px;
+        transition: background-color 0.2s;
+    }
+
+    &__name {
+        font-size: rem(20px);
+        .phone{
+            display: none;
+        }
+    }
+
+    &:hover &__img {
+        background-color: $clr2;
+    }
+}
+
+@media (max-width: $break-narrow) {
+    .contact {
+        @include flex(row, flex-start);
+        padding: 5px 20px;
+        width: 100%;
+        border-radius: 50px;
+        background-color: $clr2;
+
+        &__img {
+            width: 50px;
+            box-shadow: none;
+        }
+
+        &__name {
+            .phone{
+                font-size: rem(16px);
+                display: block;
+            }
+        }
+
+        &:hover &__img {
+            background: none;
+        }
+    }
+}
+
+@media (min-width: $break-normal) {
+    .contact {
+        &__img {
+            width: 154px;
+        }
+    }
+}
+
+@media (min-width: $break-wide) {
+    .contact {
+        &__img {
+            width: 228px;
+        }
+    }
+}
+
